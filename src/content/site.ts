@@ -17,8 +17,6 @@ export const site = {
   instagramHandle: '@auroraframes',
   youtube: 'https://youtube.com/@auroraframes',
   address: 'Studio 4, Koregaon Park, Pune 411001',
-  mapEmbed:
-    'https://www.google.com/maps?q=Koregaon+Park,+Pune&output=embed',
   hours: 'Mon – Sat · 10:00 AM – 7:00 PM',
   stats: [
     { value: '350+', label: 'Weddings captured' },

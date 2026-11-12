@@ -172,18 +172,6 @@ export default function Contact() {
           )}
         </Reveal>
       </section>
-
-      <section className="mx-auto max-w-7xl px-4 sm:px-8 pb-24">
-        <Reveal className="overflow-hidden border border-ivory/10">
-          <iframe
-            title="Studio location"
-            src={site.mapEmbed}
-            className="w-full h-[380px] grayscale invert-[0.9] contrast-[0.9]"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </Reveal>
-      </section>
     </>
   )
 }
