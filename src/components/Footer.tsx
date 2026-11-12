@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { categories, site, whatsappLink } from '../content/site'
 import { InstagramIcon, MailIcon, PhoneIcon, PinIcon, WhatsAppIcon, YoutubeIcon } from './Icons'
 import { Logo } from './Navbar'
+import { instagramLink } from '../lib/comingSoon'
 
 export default function Footer() {
   return (
@@ -15,15 +16,13 @@ export default function Footer() {
           </p>
           <div className="flex gap-3 mt-6">
             {[
-              { href: site.instagram, icon: <InstagramIcon className="w-4 h-4" />, label: 'Instagram' },
+              { href: '', icon: <InstagramIcon className="w-4 h-4" />, label: 'Instagram' },
               { href: whatsappLink(), icon: <WhatsAppIcon className="w-4 h-4" />, label: 'WhatsApp' },
               { href: site.youtube, icon: <YoutubeIcon className="w-4 h-4" />, label: 'YouTube' },
             ].map((s) => (
               <a
                 key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noreferrer"
+                {...(s.label === 'Instagram' ? instagramLink : { href: s.href, target: '_blank', rel: 'noreferrer' })}
                 aria-label={s.label}
                 className="w-10 h-10 grid place-items-center rounded-full border border-ivory/15 text-ivory/80 hover:border-gold hover:text-gold transition"
               >
@@ -72,7 +71,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href={site.instagram} target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-gold transition">
+              <a {...instagramLink} className="flex items-center gap-3 hover:text-gold transition">
                 <InstagramIcon className="w-4 h-4 text-gold" /> {site.instagramHandle}
               </a>
             </li>

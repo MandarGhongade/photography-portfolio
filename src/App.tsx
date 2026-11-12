@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import WhatsAppFab from './components/WhatsAppFab'
 import Preloader from './components/Preloader'
+import Toast from './components/Toast'
 import Home from './pages/Home'
 import Portfolio from './pages/Portfolio'
 import Films from './pages/Films'
@@ -42,6 +43,7 @@ export default function App() {
       </main>
       <Footer />
       <WhatsAppFab />
+      <Toast />
       <div className="grain" aria-hidden />
     </>
   )

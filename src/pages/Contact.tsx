@@ -3,6 +3,7 @@ import { categories, site, whatsappLink } from '../content/site'
 import { PageHero } from '../components/Blocks'
 import { InstagramIcon, MailIcon, PhoneIcon, PinIcon, WhatsAppIcon } from '../components/Icons'
 import Reveal from '../components/Reveal'
+import { instagramLink } from '../lib/comingSoon'
 import { usePageTitle } from '../lib/usePageTitle'
 
 const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY as string | undefined
@@ -58,10 +59,10 @@ export default function Contact() {
   }
 
   const contacts = [
-    { icon: <WhatsAppIcon />, label: 'WhatsApp', value: site.phone, href: whatsappLink(), ext: true },
+    { icon: <WhatsAppIcon />, label: 'WhatsApp', value: site.whatsappDisplay, href: whatsappLink(), ext: true },
     { icon: <PhoneIcon />, label: 'Call', value: site.phone, href: `tel:${site.phone.replace(/\s/g, '')}` },
     { icon: <MailIcon />, label: 'Email', value: site.email, href: `mailto:${site.email}` },
-    { icon: <InstagramIcon />, label: 'Instagram', value: site.instagramHandle, href: site.instagram, ext: true },
+    { icon: <InstagramIcon />, label: 'Instagram', value: 'Coming soon', href: '#instagram', soon: true },
   ]
 
   return (
@@ -80,6 +81,7 @@ export default function Contact() {
             <Reveal key={c.label} delay={i * 80}>
               <a
                 href={c.href}
+                onClick={c.soon ? instagramLink.onClick : undefined}
                 target={c.ext ? '_blank' : undefined}
                 rel={c.ext ? 'noreferrer' : undefined}
                 className="group flex items-center gap-5 border border-ivory/10 p-5 hover:border-gold/60 hover:bg-ink-2 transition"

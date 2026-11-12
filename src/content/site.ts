@@ -9,7 +9,8 @@ export const site = {
   owner: 'Your Name',
   city: 'Pune, Maharashtra',
   phone: '+91 98765 43210',
-  whatsapp: '919876543210', // country code + number, no "+" or spaces
+  whatsapp: '919130280676', // country code + number, no "+" or spaces
+  whatsappDisplay: '+91 91302 80676',
   whatsappMessage: "Hi! I saw your website and I'd like to enquire about a shoot.",
   email: 'hello@auroraframes.in',
   instagram: 'https://instagram.com/auroraframes',

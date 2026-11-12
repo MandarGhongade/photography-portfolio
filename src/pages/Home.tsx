@@ -8,6 +8,7 @@ import { Photo, VideoThumb } from '../components/Media'
 import { introDelay } from '../components/Preloader'
 import Reveal from '../components/Reveal'
 import SectionHeading from '../components/SectionHeading'
+import { instagramLink } from '../lib/comingSoon'
 import { usePageTitle } from '../lib/usePageTitle'
 
 const SLIDE_MS = 6500
@@ -33,7 +34,7 @@ function Hero() {
       {/* Vertical socials */}
       <div className="hidden lg:flex absolute left-8 top-1/2 -translate-y-1/2 flex-col items-center gap-6 text-ivory/60 rise" style={d(900)}>
         <span className="w-px h-16 bg-ivory/30" />
-        <a href={site.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="hover:text-gold transition"><InstagramIcon className="w-4 h-4" /></a>
+        <a {...instagramLink} aria-label="Instagram" className="hover:text-gold transition"><InstagramIcon className="w-4 h-4" /></a>
         <a href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="hover:text-gold transition"><WhatsAppIcon className="w-4 h-4" /></a>
         <span className="w-px h-16 bg-ivory/30" />
         <span className="[writing-mode:vertical-rl] rotate-180 text-[0.6rem] uppercase tracking-[0.4em]">Est. 2016</span>
@@ -383,13 +384,13 @@ function InstagramStrip() {
     <section className="pt-28 sm:pt-36">
       <Reveal className="text-center mb-12 px-4">
         <p className="eyebrow mb-4">Follow the journey</p>
-        <a href={site.instagram} target="_blank" rel="noreferrer" className="font-display text-4xl sm:text-5xl hover:text-gold-2 transition inline-flex items-center gap-4">
+        <a {...instagramLink} className="font-display text-4xl sm:text-5xl hover:text-gold-2 transition inline-flex items-center gap-4">
           <InstagramIcon className="w-8 h-8" /> {site.instagramHandle}
         </a>
       </Reveal>
       <div className="grid grid-cols-3 md:grid-cols-6">
         {instagramPhotos.map((p, i) => (
-          <a key={i} href={site.instagram} target="_blank" rel="noreferrer" className="group relative block" aria-label="Open Instagram">
+          <a key={i} {...instagramLink} className="group relative block" aria-label="Open Instagram">
             <Photo id={p} className="aspect-square" sizes="(min-width: 768px) 17vw, 33vw" />
             <span className="absolute inset-0 grid place-items-center bg-ink/60 opacity-0 group-hover:opacity-100 transition duration-500">
               <InstagramIcon className="w-7 h-7 text-gold" />
